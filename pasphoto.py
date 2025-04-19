@@ -165,7 +165,14 @@ image = Image.open(qr_path)
 st.image(image, caption="Scan to Buy Me a Coffee", width=200)
 
 # PropellerAds banner ad
-components.html("""
+# components.html("""
+# <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5277332122718000"
+#      crossorigin="anonymous"></script>
+# """, height=250)
+
+# Injecting meta and script via markdown (limited scope)
+st.markdown("""
+    <meta name="google-adsense-account" content="ca-pub-5277332122718000">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5277332122718000"
      crossorigin="anonymous"></script>
-""", height=250)
+""", unsafe_allow_html=True)
